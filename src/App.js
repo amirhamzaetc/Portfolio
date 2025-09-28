@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import githubApi from "./data/GithubApi";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // Components
@@ -12,13 +13,13 @@ import Home from "./pages/Home"
 function App() {
   return (
     <BrowserRouter>
-    <Nav />
-    <br/>
-    <br/>
-    <br/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+      <Nav />
+      <br />
+      <br />
+      <br />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </BrowserRouter>
   );
 }
