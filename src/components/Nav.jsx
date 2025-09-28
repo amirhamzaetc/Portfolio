@@ -15,12 +15,20 @@ function Nav(){
     return(
         <div>
             <nav className="nav">
-                <div className="flex around">
+                <div className="flex around medel">
                     <div className="flex center medel logoBox">
-                        <img className="githublogo" height={"50px"} src="https://avatars.githubusercontent.com/u/9919?v=4" alt="avatar" />
-                        <h1>{userData?.name}</h1>
+                        <img className="githublogo"  src="https://avatars.githubusercontent.com/u/9919?v=4" alt="avatar" />
+                        <h3>{userData?.name}</h3>
                     </div>
-                    <div>2</div>
+                    <div>
+                     {/* This is a Desktop Version 1.0.1 */}
+                     <div className="desktop-show">
+                       <button className="btn navbtn active flex center medel">
+                        <i class="fa-regular fa-house big-x"></i>
+                        <span>Home</span>
+                      </button>
+                     </div>
+                    </div>
                 </div>
             </nav>
         </div>

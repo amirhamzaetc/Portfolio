@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
 
-
+*{
+     font-family: "Zalando Sans Expanded", sans-serif;
+}
+:root{
+    --bg-button-color:#238636;
+}
 body{
     margin: 0;
     padding: 0;
     background-color: #1f1f1f;
     color: #fff;
-    font-family: "Zalando Sans Expanded", sans-serif;
 }
 
 
@@ -29,9 +33,8 @@ h1,h2,h3,h4,h5,h6{
    align-items: center;
 }
 .githublogo{
-    height: 50px;
-    padding-right: 10px;
-    border-radius: 10px;background-color: #000;
+    height: 30px;
+    padding-right: 5px;
 }
 .nav{
     height: auto;
@@ -42,6 +45,20 @@ h1,h2,h3,h4,h5,h6{
     padding: 8px;
 }
 .logoBox{
-    background-color: #000;
+    background-color: #00000074;
     border-radius: 10px;
+    padding: 10px;
+    opacity: 0.8;
+}
+.btn{
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--bg-button-color);
+    color: #fff;
+}
+.big-x{
+    font-size: 16px;
+    padding-right: 5px;
 }
