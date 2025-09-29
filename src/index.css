@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
 
-*{
-     font-family: "Zalando Sans Expanded", sans-serif;
+* {
+    font-family: "Zalando Sans Expanded", sans-serif;
 }
-:root{
-    --bg-button-color:#238636;
-    --body-color:#0f0f10;
-    --l-color:#2c2c2c;
+
+:root {
+    --bg-button-color: #238636;
+    --body-color: #0f0f10;
+    --l-color: #2c2c2c;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
     background-color: var(--body-color);
@@ -16,29 +18,41 @@ body{
 }
 
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
-.flex{
+
+.flex {
     display: flex;
 }
-.block{
+
+.block {
     display: block;
 }
-.around{
+
+.around {
     justify-content: space-around;
 }
-.center{
+
+.center {
     justify-content: center;
 }
-.medel{
-   align-items: center;
+
+.medel {
+    align-items: center;
 }
-.githublogo{
+
+.githublogo {
     height: 30px;
     padding-right: 5px;
 }
-.nav{
+
+.nav {
     height: auto;
     width: 100%;
     position: fixed;
@@ -46,45 +60,78 @@ h1,h2,h3,h4,h5,h6{
     background-color: var(--body-color);
     padding: 8px;
     border-bottom: 1px solid var(--bg-button-color);
+    box-shadow: 0 4px 8px 0 rgba(68, 68, 68, 0.2), 0 6px 20px 0 rgba(132, 132, 132, 0.19);
 }
-.logoBox{
+
+.logoBox {
     background-color: #00000074;
     border-radius: 10px;
     padding: 10px;
     opacity: 0.8;
 }
-.btn{
+
+.btn {
     border: none;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-   color: #dddddd;
+    color: #dddddd;
 }
-.big-x{
+
+.big-x {
     font-size: 16px;
-    padding-right: 5px;
 }
-.navbtn{
+
+.left-space {
+    padding-left: 5px;
+}
+
+.navbtn {
     text-decoration: none;
     color: #dddddd;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin: 0 5px;
 }
 
-.noactive{
+.noactive {
     border: 1px solid var(--l-color);
     background-color: transparent;
 }
 
-.active{
+.active {
     border: 1px solid var(--bg-button-color);
     background-color: var(--bg-button-color);
 }
 
-.navbtn:hover{
-  border: 1px solid var(--bg-button-color);
+.navbtn:hover {
+    border: 1px solid var(--bg-button-color);
 }
 
+@keyframes openPopup {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
+@keyframes closePopup {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    
+}
 
 
 
@@ -97,25 +144,67 @@ h1,h2,h3,h4,h5,h6{
 
 
 /* Desktop Version */
-.desktop-show{
+.desktop-show {
     display: block;
 }
-.desktop-show-flex{
+
+.desktop-show-flex {
     display: flex;
 }
 
 /* Mobile Version */
-.mobile-show{
+.mobile-show {
     display: none;
 }
+/* Responsive Design */
+.response-container{
+    display: flex;
+    width: 80%;
+    background-color: transparent;
+    margin: auto;
+    justify-content: center;
+}
+.response-box{
+    width: 100%;
+    margin: auto;
+    background-color: transparent;
+}
+
 /* use for mobile css */
 @media only screen and (max-width: 768px) {
+.response-container{
+    width: 100%;
+}
     /* Desktop Version */
-    .desktop-show{
+    .desktop-show,
+    .desktop-show-flex {
         display: none;
     }
+
     /* Mobile Version */
-    .mobile-show{
+    .mobile-show {
         display: block;
+    }
+
+    .sidemenu-show-in-mobile {
+        height: auto;
+        display: block;
+        position: fixed;
+        right: 10px;
+        background-color: transparent;
+        width: 60%;
+        border: 1px solid var(--l-color);
+        border-radius: 10px;
+        padding: 10px;
+        backdrop-filter: blur(10px);
+        animation: openPopup 0.3s ease;
+    }
+
+
+    .sidemenu-show-in-mobile .navbtn {
+        width: 80%;
+        text-align: left;
+        display: block;
+        margin: 10px auto;
     }
 }

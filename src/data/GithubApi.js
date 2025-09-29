@@ -1,6 +1,8 @@
 
+import apigithuburl from "../data/github_username.json";
+
 function githubApi() {
-  const githuburl = "https://api.github.com/users/nahidhk";
+  const githuburl = apigithuburl.pubUserInfoLink + apigithuburl.username;
   return fetch(githuburl)
     .then(response => response.json())
     .then(data => {

@@ -9,6 +9,20 @@ function Home() {
     })
   }, [])
 
+
+  return (
+    <div>
+
+    <div>
+      Check the web response
+    </div>
+
+
+
+
+    </div>
+  )
+
 }
 
 export default Home;

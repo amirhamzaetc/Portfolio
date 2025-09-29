@@ -17,9 +17,14 @@ function App() {
       <br />
       <br />
       <br />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <br />
+      <div className="response-container">
+        <div className="response-box">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
