@@ -5,12 +5,14 @@
 }
 :root{
     --bg-button-color:#238636;
+    --body-color:#0f0f10;
+    --l-color:#2c2c2c;
 }
 body{
     margin: 0;
     padding: 0;
-    background-color: #1f1f1f;
-    color: #fff;
+    background-color: var(--body-color);
+    color: #dddddd;
 }
 
 
@@ -41,8 +43,9 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: #353535;
+    background-color: var(--body-color);
     padding: 8px;
+    border-bottom: 1px solid var(--bg-button-color);
 }
 .logoBox{
     background-color: #00000074;
@@ -55,10 +58,64 @@ h1,h2,h3,h4,h5,h6{
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    background-color: var(--bg-button-color);
-    color: #fff;
+   color: #dddddd;
 }
 .big-x{
     font-size: 16px;
     padding-right: 5px;
+}
+.navbtn{
+    text-decoration: none;
+    color: #dddddd;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.noactive{
+    border: 1px solid var(--l-color);
+    background-color: transparent;
+}
+
+.active{
+    border: 1px solid var(--bg-button-color);
+    background-color: var(--bg-button-color);
+}
+
+.navbtn:hover{
+  border: 1px solid var(--bg-button-color);
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+
+
+/* Desktop Version */
+.desktop-show{
+    display: block;
+}
+.desktop-show-flex{
+    display: flex;
+}
+
+/* Mobile Version */
+.mobile-show{
+    display: none;
+}
+/* use for mobile css */
+@media only screen and (max-width: 768px) {
+    /* Desktop Version */
+    .desktop-show{
+        display: none;
+    }
+    /* Mobile Version */
+    .mobile-show{
+        display: block;
+    }
 }

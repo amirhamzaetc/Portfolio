@@ -22,11 +22,19 @@ function Nav(){
                     </div>
                     <div>
                      {/* This is a Desktop Version 1.0.1 */}
-                     <div className="desktop-show">
-                       <button className="btn navbtn active flex center medel">
-                        <i class="fa-regular fa-house big-x"></i>
+                     <div className="desktop-show-flex ">
+                      {/* Home button */}
+                       <button className="btn navbtn noactive flex center medel">
+                        <i className="fa-regular fa-house big-x"></i>
                         <span>Home</span>
                       </button>
+                      {/* About button */}
+                      <button className="btn navbtn noactive flex center medel">
+                        <i className="fa-regular fa-user big-x"></i>
+                        <span>About</span>
+                      </button>
+                      
+
                      </div>
                     </div>
                 </div>
