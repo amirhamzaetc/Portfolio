@@ -132,6 +132,31 @@ h6 {
     }
     
 }
+.cercel{
+    border-radius: 1000px;
+}
+.border{
+    border: 5px solid var(--bg-button-color);
+    padding: 5px;
+}
+.userimg{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    margin: 10px;
+}
+.left{
+    justify-content: left;
+    display: flex;
+}
+.overbox{
+    background-color: #00000074;
+    border-radius: 10px;
+    padding: 10px;
+    opacity: 0.8;
+    margin: 10px 0;
+}
+
 
 
 
@@ -159,14 +184,12 @@ h6 {
 /* Responsive Design */
 .response-container{
     display: flex;
-    width: 80%;
+    width: 100%;
     background-color: transparent;
-    margin: auto;
     justify-content: center;
 }
 .response-box{
-    width: 100%;
-    margin: auto;
+    width: 80%;
     background-color: transparent;
 }
 
