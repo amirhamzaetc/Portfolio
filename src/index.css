@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--body-color);
-    color: #dddddd;
+    color: #888888;
 }
 
 
@@ -81,6 +81,9 @@ h6 {
 .big-x {
     font-size: 16px;
 }
+.big-xxl{
+    font-size: 20px;
+}
 
 .left-space {
     padding-left: 5px;
@@ -118,8 +121,9 @@ h6 {
         transform: scale(1);
         opacity: 1;
     }
-    
+
 }
+
 @keyframes closePopup {
     0% {
         transform: scale(1);
@@ -130,26 +134,31 @@ h6 {
         transform: scale(0.5);
         opacity: 0;
     }
-    
+
 }
-.cercel{
+
+.cercel {
     border-radius: 1000px;
 }
-.border{
+
+.border {
     border: 5px solid var(--bg-button-color);
     padding: 5px;
 }
-.userimg{
+
+.userimg {
     height: 150px;
     width: 150px;
     object-fit: cover;
     margin: 10px;
 }
-.left{
+
+.left {
     justify-content: left;
     display: flex;
 }
-.overbox{
+
+.overbox {
     background-color: #00000074;
     border-radius: 10px;
     padding: 10px;
@@ -157,8 +166,17 @@ h6 {
     margin: 10px 0;
 }
 
-
-
+.title {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #888888;
+}
+a{
+    color: #383838;
+}
+.w300px{
+    width: 300px;
+}
 
 
 
@@ -181,23 +199,26 @@ h6 {
 .mobile-show {
     display: none;
 }
+
 /* Responsive Design */
-.response-container{
+.response-container {
     display: flex;
     width: 100%;
     background-color: transparent;
     justify-content: center;
 }
-.response-box{
+
+.response-box {
     width: 80%;
     background-color: transparent;
 }
 
 /* use for mobile css */
 @media only screen and (max-width: 768px) {
-.response-container{
-    width: 100%;
-}
+    .response-container {
+        width: 100%;
+    }
+
     /* Desktop Version */
     .desktop-show,
     .desktop-show-flex {
