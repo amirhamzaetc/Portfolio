@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import githubApi from "../data/GithubApi";
 import usererrorimg from "../assets/user_error.webp"
 import formatNumber from "../script/formatNuber";
+import Loading from "../components/Loading";
 import haike1 from "../assets/1haike.svg"
 import haike2 from "../assets/2haike.svg"
 import haike3 from "../assets/3haike.svg"
@@ -16,9 +17,11 @@ function Home() {
   const borderStyleCode = [haike1, haike2, haike3, haike4, haike5, haike6, haike7, haike8, haike9];
   const [randomShow, setBorderStyle] = useState("");
   const [userData, setUserData] = useState(null);
+  const [loading, setloading] = useState(true);
   useEffect(() => {
     githubApi().then(data => {
       setUserData(data);
+      setloading(false);
     });
 
     const interval = setInterval(() => {
@@ -30,12 +33,16 @@ function Home() {
     return () => clearInterval(interval);
   }, []);
   const followers = userData?.followers;
+
+
+  if (loading) {
+    return <Loading/>
+  }
+
   return (
     <div>
       <div className="flex">
-        <div
-          style={{ backgroundImage: `url(${randomShow})` }}
-          className="fb-bg-cover-pto-system mobileCenter flex  w100">
+        <div className="fb-bg-cover-pto-system flex mobile-column medel">
 
           <div className="mobileCenter">
             <img
@@ -59,15 +66,15 @@ function Home() {
                 <a href={userData?.html_url}>{userData?.login}</a>
               </p>
               <p className="flex medel big-x">
-               <span>
-                 <i class="fa-solid fa-users big-xxl"></i>
-               </span>
                 <span>
-                 
-                    {formatNumber(userData?.followers || 0)} Followers 
-                    <br />
-                    {formatNumber(userData?.following || 0)} Following
-                  
+                  <i class="fa-solid fa-users big-xxl"></i>
+                </span>
+                <span>
+
+                  {formatNumber(userData?.followers || 0)} Followers
+                  <br />
+                  {formatNumber(userData?.following || 0)} Following
+
 
                 </span>
               </p>

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import githubApi from "./data/GithubApi";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+
 // Components
 import Nav from "./components/Nav";
+import Loading from "./components/Loading"
 
 
 // Pages
@@ -22,6 +24,7 @@ function App() {
         <div className="response-box">
           <Routes>
             <Route path="/" element={<Home />} />
+             <Route path="/l" element={<Loading />} />
           </Routes>
         </div>
       </div>
