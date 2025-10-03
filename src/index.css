@@ -81,8 +81,10 @@ h6 {
 .big-x {
     font-size: 16px;
 }
-.big-xxl{
+
+.big-xxl {
     font-size: 20px;
+    padding-right: 10px;
 }
 
 .left-space {
@@ -144,11 +146,12 @@ h6 {
 .border {
     border: 5px solid var(--bg-button-color);
     padding: 5px;
+
 }
 
 .userimg {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     object-fit: cover;
     margin: 10px;
 }
@@ -158,26 +161,52 @@ h6 {
     display: flex;
 }
 
-.overbox {
-    background-color: #00000074;
-    border-radius: 10px;
-    padding: 10px;
-    opacity: 0.8;
-    margin: 10px 0;
-}
-
 .title {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 650;
+    text-align: center;
     color: #888888;
-}
-a{
-    color: #383838;
-}
-.w300px{
-    width: 300px;
+    border-bottom: 1px solid #2e2e2e;
+    padding: 10px;
+    border-radius: 3px;
 }
 
+a {
+    color: #383838;
+}
+
+.fb-bg-cover-pto-system {
+    height: auto;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 10%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 4s ease-in-out; 
+}
+
+
+
+
+.infoGlass {
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    padding: 5%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    animation: openPopup 0.3s ease;
+    border: 1px solid var(--l-color);
+}
+
+.desktop-wrap {
+    flex-wrap: wrap;
+}
+
+.w100 {
+    width: 100%;
+}
 
 
 
@@ -246,9 +275,28 @@ a{
 
 
     .sidemenu-show-in-mobile .navbtn {
-        width: 80%;
+        width: 70%;
         text-align: left;
         display: block;
         margin: 10px auto;
     }
+
+    .mobileCenter {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-column {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* test */
+
+.test {
+    background-color: red;
 }
