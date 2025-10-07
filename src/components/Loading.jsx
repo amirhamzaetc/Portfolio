@@ -5,7 +5,7 @@ function Loading() {
         <>
             <div className="darkBox flex center medel">
                 <div>
-                    <div class="loader"></div>
+                    <div className="loader"></div>
                 </div>
             </div>
         </>

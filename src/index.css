@@ -246,11 +246,41 @@ a {
   100%{transform: rotate(.5turn)}
 }
 .fa-bug{
-    font-size: 100px;
+    font-size: 50px;
 }
 .textCenter{
     text-align: center;
 }
+.point{
+    background-color: #303030;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 5px;
+    color: #fff;
+}
+.wS{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsive Design */

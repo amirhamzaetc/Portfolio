@@ -10,17 +10,20 @@ function Error() {
     });
     return (
         <>
-            <div className="darkBox flex center medel">
-                <div className="textCenter">
+            <div className="flex center medel">
+                <div className="textCenter w80">
                     <i className="fa-solid fa-bug"></i>
-                    <h1>Api Not Found!</h1>
+                    <h2>Api Not Found!</h2>
                     <p>
-                        {userData?.message}
+                        <div className="wS">
+                            {userData?.message || "GitHub Api is not Working!"}
+                        
                         <br />
-                        <a href={userData?.documentation_url}> {userData?.documentation_url} </a>
+                        <br />
+                        <a href={userData?.documentation_url || "https://github.com/nahidhk"}> <i class="fa-solid fa-arrow-up-right-from-square"></i> Documentation </a>
                         <br />
                         <br />
-                        <button className="btn active">About</button>
+                        </div>
                     </p>
                 </div>
             </div>
