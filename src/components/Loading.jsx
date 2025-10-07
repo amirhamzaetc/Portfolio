@@ -8,9 +8,6 @@ function Loading() {
                     <div class="loader"></div>
                 </div>
             </div>
-
-
-
         </>
     )
 }

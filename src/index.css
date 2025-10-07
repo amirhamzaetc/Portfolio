@@ -183,12 +183,12 @@ a {
     padding: 10%;
     background-size: cover;
     background-position: center;
-    transition: background-image 4s ease-in-out; 
+    background-image: linear-gradient(45deg, #180026,#000);
 }
 .infoGlass {
     height: auto;
     width: auto;
-    background-color: transparent;
+    background-color: #80808007;
     padding: 5%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -245,7 +245,12 @@ a {
 @keyframes l12 { 
   100%{transform: rotate(.5turn)}
 }
-
+.fa-bug{
+    font-size: 100px;
+}
+.textCenter{
+    text-align: center;
+}
 
 
 /* Responsive Design */
@@ -283,6 +288,10 @@ a {
     .response-container {
         width: 100%;
     }
+    .response-box {
+    width: 100%;
+    background-color: transparent;
+}
 
     /* Desktop Version */
     .desktop-show,

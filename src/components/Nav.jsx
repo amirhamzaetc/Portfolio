@@ -19,7 +19,7 @@ function Nav() {
         <div className="flex around medel">
           <div className="flex center medel logoBox">
             <img className="githublogo" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="avatar" />
-            <h3>{userData?.name}</h3>
+            <h3>{userData?.name || "Nahid TD"}</h3>
           </div>
           <div>
             <Sidemenu />
