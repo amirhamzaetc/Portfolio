@@ -4,11 +4,11 @@ import usererrorimg from "../assets/user_error.webp"
 import formatNumber from "../script/formatNuber";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
-import StarAndCon from "../script/StarsAndCon";
+
 
 
 function Home() {
-  StarAndCon()
+
   const [userData, setUserData] = useState(null);
   const [loading, setloading] = useState(true);
   useEffect(() => {
