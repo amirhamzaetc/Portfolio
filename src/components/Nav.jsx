@@ -17,11 +17,11 @@ function Nav() {
     <div>
       <nav className="nav">
         <div className="flex around medel">
-          <div className="flex center medel logoBox">
+          <div className="flex center medel logoBox sizeppo">
             <img className="githublogo" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="avatar" />
             <h3>{userData?.name || "Nahid TD"}</h3>
           </div>
-          <div>
+          <div className="sizeppo flex center medel">
             <Sidemenu />
           </div>
         </div>

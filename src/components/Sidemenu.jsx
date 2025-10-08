@@ -1,5 +1,6 @@
 import react from "react";
 import { useNavigate } from "react-router-dom";
+import { FiUsers } from "react-icons/fi";
 
 
 function Sidemenu() {
@@ -24,14 +25,14 @@ function Sidemenu() {
         <>
 
             {/* This is a Desktop Version 1.0.1 */}
-            <div>
+            <div className="flex center medel">
                 {/* Only for mobile show this data */}
                 <div className="mobile-show">
                     <button onClick={() => toggleSidemenu()} className="btn navbtn noactive center medel flex">
                         <i id="menu-icon" className="fa-solid fa-bars big-x"></i>
                     </button>
                 </div>
-                <div id="sidemenu" className="desktop-show-flex">
+                <div id="sidemenu" className="desktop-show-flex sizeppo">
                     {/* Home button */}
                     <button onClick={() => navigate("/")} className={"btn navbtn noactive flex center medel" + (isActive("/") ? " active" : "noactive")}>
                         <i className="fa-regular fa-gem big-x"></i>
@@ -41,6 +42,13 @@ function Sidemenu() {
                     <button onClick={() => navigate("/about")} className={"btn navbtn noactive flex center medel" + (isActive("/about") ? " active" : "noactive")}>
                         <i className="fa-regular fa-user big-x"></i>
                         <span className="left-space">About</span>
+                    </button>
+                    {/* Followrs Button */}
+                    <button onClick={() => navigate("/followers")} className={"btn navbtn noactive flex center medel"+(isActive("/followers") ? " active" : "noactive")}>
+                   <FiUsers className="big-x"/>
+                   <span className="left-space">
+                    Followers
+                   </span>
                     </button>
                 </div>
             </div>

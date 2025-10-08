@@ -281,8 +281,6 @@ a {
 
 
 
-
-
 /* Responsive Design */
 
 
@@ -315,6 +313,7 @@ a {
 
 /* use for mobile css */
 @media only screen and (max-width: 768px) {
+
     .response-container {
         width: 100%;
     }
@@ -374,4 +373,24 @@ a {
 
 .test {
     background-color: red;
+}
+
+
+
+@media  only screen and (min-width: 768px) {
+  .left-space {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  transition: all 0.3s ease;
+}
+
+.navbtn:hover .left-space {
+  opacity: 1;
+  visibility: visible;
+  width: 100px; 
+}
+.sizeppo{
+    width: 100%;
+}
 }
