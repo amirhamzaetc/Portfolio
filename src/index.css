@@ -345,6 +345,7 @@ a {
         padding: 10px;
         backdrop-filter: blur(10px);
         animation: openPopup 0.3s ease;
+        top: 68px;
     }
 
 

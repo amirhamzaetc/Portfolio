@@ -46,7 +46,7 @@ function Home() {
               </div>
               <div className="infoGlass">
                 <div className="title">
-                  {userData?.name}
+                  Hello i'am {userData?.name}
                 </div>
                 <div>
                   <p>
