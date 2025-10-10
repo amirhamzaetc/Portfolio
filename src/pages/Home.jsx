@@ -25,15 +25,7 @@ function Home() {
     <div>
       {
         userData?.message ?
-          <div className="flex">
-            <div className="fb-bg-cover-pto-system flex mobile-column medel center">
-              <div className="center">
                 <Error/>
-              </div>
-            </div>
-          </div>
-
-
           :
           <div className="flex">
             <div className="fb-bg-cover-pto-system flex mobile-column medel center">

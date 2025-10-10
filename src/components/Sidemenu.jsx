@@ -1,6 +1,7 @@
 import react from "react";
 import { useNavigate } from "react-router-dom";
 import { FiUsers } from "react-icons/fi";
+import { VscRepo } from "react-icons/vsc";
 
 
 function Sidemenu() {
@@ -23,7 +24,6 @@ function Sidemenu() {
 
     return (
         <>
-
             {/* This is a Desktop Version 1.0.1 */}
             <div className="flex center medel">
                 {/* Only for mobile show this data */}
@@ -34,22 +34,22 @@ function Sidemenu() {
                 </div>
                 <div id="sidemenu" className="desktop-show-flex sizeppo">
                     {/* Home button */}
-                    <button onClick={() => navigate("/")} className={"btn navbtn noactive flex center medel" + (isActive("/") ? " active" : "noactive")}>
+                    <div onClick={() => navigate("/")} className={"btn navbtn noactive flex center medel" + (isActive("/") ? " active" : "noactive")}>
                         <i className="fa-regular fa-gem big-x"></i>
                         <span className="left-space">Overview</span>
-                    </button>
+                    </div>
                     {/* About button */}
-                    <button onClick={() => navigate("/about")} className={"btn navbtn noactive flex center medel" + (isActive("/about") ? " active" : "noactive")}>
-                        <i className="fa-regular fa-user big-x"></i>
-                        <span className="left-space">About</span>
-                    </button>
+                    <div onClick={() => navigate("/repo")} className={"btn navbtn noactive flex center medel" + (isActive("/repo") ? " active" : "noactive")}>
+                       <span><VscRepo className="big-x" /></span>
+                        <span className="left-space">Repositories</span>
+                    </div>
                     {/* Followrs Button */}
-                    <button onClick={() => navigate("/followers")} className={"btn navbtn noactive flex center medel"+(isActive("/followers") ? " active" : "noactive")}>
+                    <div onClick={() => navigate("/followers")} className={"btn navbtn noactive flex center medel"+(isActive("/followers") ? " active" : "noactive")}>
                    <FiUsers className="big-x"/>
                    <span className="left-space">
                     Followers
                    </span>
-                    </button>
+                    </div>
                 </div>
             </div>
         </>

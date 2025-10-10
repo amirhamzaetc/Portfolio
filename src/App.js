@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // Components
 import Nav from "./components/Nav";
-import Loading from "./components/Loading"
+import Loading from "./components/Loading";
 
 
 // Pages
 
-import Home from "./pages/Home"
+import Home from "./pages/Home";
+import Followers from "./pages/Folloers";
+import Repo from "./pages/Repo";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
         <div className="response-box">
           <Routes>
             <Route path="/" element={<Home />} />
-             <Route path="/l" element={<Loading />} />
+            <Route path="/l" element={<Loading />} />
+            <Route path="/followers" element={<Followers />} />
+            <Route path="/repo" element={<Repo />} />
           </Routes>
         </div>
       </div>
