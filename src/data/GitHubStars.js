@@ -14,19 +14,19 @@ async function fetchTotalStars(username) {
     while (true) {
         const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
         const res = await fetch(url, { headers });
-        
+
         if (!res.ok) {
 
             throw new Error(`GitHub API Error: ${res.status} ${res.statusText}`);
         }
 
         const repos = await res.json();
-        
+
         for (const r of repos) {
             total += (r.stargazers_count || 0);
         }
 
-       
+
         if (repos.length < perPage) break;
         page++;
     }
@@ -35,31 +35,29 @@ async function fetchTotalStars(username) {
 }
 
 function GitHubStars({ username }) {
-    const [totalStars, setTotalStars] = useState(null); // ডেটা রাখার জন্য state
-    const [loading, setLoading] = useState(true);     // লোডিং স্টেট
-    const [error, setError] = useState(null);         // এরর মেসেজ রাখার জন্য state
+    const [totalStars, setTotalStars] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // useEffect Hook: এই হুক কম্পোনেন্টটি লোড হওয়ার পরে (mount) একবার রান করবে
+
     useEffect(() => {
         const loadStars = async () => {
             try {
-                setLoading(true); // ডেটা ফেচ শুরু হওয়ার আগে লোডিং সেট করা
+                setLoading(true);
                 const stars = await fetchTotalStars(username);
                 setTotalStars(stars);
-                setError(null); // সফল হলে এরর ক্লিয়ার করা
+                setError(null);
             } catch (err) {
                 console.error("Failed to fetch stars:", err);
-                setError(err.message); // এরর স্টেট সেট করা
+                setError(err.message);
                 setTotalStars(null);
             } finally {
-                setLoading(false); // ডেটা ফেচ শেষ হলে লোডিং বন্ধ করা
+                setLoading(false);
             }
         };
 
-        loadStars(); // ফাংশনটি কল করা
-    }, [username]); // dependency array-তে username রাখা, যাতে এটি পরিবর্তন হলে ডেটা আবার লোড হয়
-
-    // রেন্ডারিং লজিক (Displaying Logic)
+        loadStars();
+    }, [username]);
     if (loading) {
         return <p>Loading total stars for {username}...</p>;
     }

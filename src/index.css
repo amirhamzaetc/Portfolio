@@ -315,9 +315,25 @@ a {
     width: 50%;
 }
 
-
-
-
+.socalIcon{
+    font-size: 20px;
+}
+.telegram:hover{
+    background-color: #36a2fa;
+}
+.facebook:hover{
+    background-color: #0866ff;
+}
+.linkedin:hover{
+    background-color: #0A66c2;
+}
+.wa:hover{
+    background-color: #25D366;
+}
+.snapchat:hover{
+    background-color: #fffc00;
+    color: #000;
+}
 
 
 

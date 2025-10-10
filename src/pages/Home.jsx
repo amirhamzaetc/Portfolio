@@ -5,6 +5,8 @@ import formatNumber from "../script/formatNuber";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import GitHubStars from '../data/GitHubStars';
+import Contacts from '../components/Contacts';
+
 
 // icons
 import { FaRegStar } from "react-icons/fa";
@@ -12,6 +14,7 @@ import { LuUsersRound } from "react-icons/lu";
 import { VscGithub } from "react-icons/vsc";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { BsBuildings } from "react-icons/bs";
+import { IoLocationOutline } from "react-icons/io5";
 
 function Home() {
 
@@ -68,7 +71,7 @@ function Home() {
                     {
                       userData?.location ? (
                         <span className="flex medel">
-                          <i className="fa-solid fa-location-dot big-xxl"></i>{" "}
+                          <IoLocationOutline className="big-xxl"/> {" "}
                           {userData?.location}
                         </span>
                       ) : (
@@ -96,6 +99,9 @@ function Home() {
                       <GitHubStars username={userData?.login} />
                     </span>
                   </p>
+                  <div className="flex center medel">
+                    <Contacts />
+                  </div>
                 </div>
               </div>
             </div>
