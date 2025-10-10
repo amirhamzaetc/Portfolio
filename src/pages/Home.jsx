@@ -4,8 +4,14 @@ import usererrorimg from "../assets/user_error.webp"
 import formatNumber from "../script/formatNuber";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import GitHubStars from '../data/GitHubStars';
 
-
+// icons
+import { FaRegStar } from "react-icons/fa";
+import { LuUsersRound } from "react-icons/lu";
+import { VscGithub } from "react-icons/vsc";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { BsBuildings } from "react-icons/bs";
 
 function Home() {
 
@@ -25,7 +31,7 @@ function Home() {
     <div>
       {
         userData?.message ?
-                <Error/>
+          <Error />
           :
           <div className="flex">
             <div className="fb-bg-cover-pto-system flex mobile-column medel center">
@@ -45,12 +51,12 @@ function Home() {
                     {userData?.bio}
                   </p>
                   <p className="flex bedel">
-                    <i className="fa-brands fa-github big-xxl"></i>
+                   <VscGithub className="big-xxl"/>
                     <a href={userData?.html_url}>{userData?.login}</a>
                   </p>
                   <p className="flex medel big-x">
                     <span>
-                      <i className="fa-solid fa-users big-xxl"></i>
+                      <LuUsersRound className="big-xxl"/>
                     </span>
                     <span>
                       <span className="point">{formatNumber(userData?.followers || 0)}</span> Followers
@@ -71,15 +77,23 @@ function Home() {
                     }
                   </p>
                   <p className="flex medel">
-                    <i className="fa-solid fa-book-bookmark big-xxl"></i>
-                    Repositories &nbsp; <span className="point">{userData?.public_repos}</span>
+                   <RiGitRepositoryLine className="big-xxl"/>
+                    Repositories &nbsp; <span className="mark">{userData?.public_repos}</span>
                   </p>
                   <p className="flex medel">
                     <span>
-                      <i className="fa-regular fa-building big-xxl"></i>
+                      <BsBuildings className="big-xxl"/>
                     </span>
                     <span>
                       {userData?.company}
+                    </span>
+                  </p>
+                  <p className="flex medel">
+                    <FaRegStar className="big-xxl" />
+                    Stars
+                    &nbsp;
+                    <span className="mark">
+                      <GitHubStars username={userData?.login} />
                     </span>
                   </p>
                 </div>
