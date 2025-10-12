@@ -200,7 +200,8 @@ a {
     border: 1px solid var(--l-color);
 }
 
-.desktop-wrap , .wrap {
+.desktop-wrap,
+.wrap {
     flex-wrap: wrap;
 }
 
@@ -315,24 +316,35 @@ a {
     width: 50%;
 }
 
-.socalIcon{
+.socalIcon {
     font-size: 20px;
 }
-.telegram:hover{
+
+.telegram:hover {
     background-color: #36a2fa;
 }
-.facebook:hover{
+
+.facebook:hover {
     background-color: #0866ff;
 }
-.linkedin:hover{
+
+.linkedin:hover {
     background-color: #0A66c2;
 }
-.wa:hover{
+
+.wa:hover {
     background-color: #25D366;
 }
-.snapchat:hover{
+
+.snapchat:hover {
     background-color: #fffc00;
     color: #000;
+}
+
+.column {
+
+    flex-direction: column;
+
 }
 
 

@@ -44,7 +44,7 @@ function Repo() {
                             </span>
 
                             <span className="mark">
-                               <PiGithubLogoLight /> GitHub
+                               <PiGithubLogoLight /> GitHub  
                             </span>
 
                         </div>
