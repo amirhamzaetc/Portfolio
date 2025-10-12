@@ -53,6 +53,12 @@ function Followers() {
                     )}
                 </div>
             )}
+            <div className='flex center medel w100'>
+               <div className='flex around medel'>
+                   <div>Pre</div>
+                   <div>Next</div>
+               </div> 
+            </div>
         </>
     );
 
