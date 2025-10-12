@@ -17,7 +17,7 @@ function Followers() {
                 setUserData(data);
 
                 // Followers fetch
-                if (data?.followers_url) {
+                if (data?.followers_url+"??per_page=5&page=1") {
                     const res = await fetch(data.followers_url);
                     const followersData = await res.json();
                     setFollowers(followersData);
