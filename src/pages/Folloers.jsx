@@ -53,10 +53,14 @@ function Followers() {
                     )}
                 </div>
             )}
-            <div className='flex center medel w100 test'>
-               <div className='flex around medel'>
-                   <div>Pre</div>
-                   <div>Next</div>
+            <div className='flex center medel w100'>
+               <div className='flex around medel w100'>
+                  <button className='btn navbtn active flex center medel'>
+                   Previous  
+                  </button> 
+                  <button className='btn navbtn flex center medel active'>
+                    Next  
+                  </button>
                </div> 
             </div>
         </>
