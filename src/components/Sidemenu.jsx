@@ -40,15 +40,16 @@ function Sidemenu() {
                     </div>
                     {/* About button */}
                     <div onClick={() => navigate("/repo")} className={"btn navbtn noactive flex center medel" + (isActive("/repo") ? " active" : "noactive")}>
-                       <span><VscRepo className="big-x" /></span>
-                        <span className="left-space">Repositories</span>
+                        <span><VscRepo className="big-x" /></span>
+                        <span className="left-space">Repositories
+                        </span>
                     </div>
                     {/* Followrs Button */}
-                    <div onClick={() => navigate("/followers")} className={"btn navbtn noactive flex center medel"+(isActive("/followers") ? " active" : "noactive")}>
-                   <FiUsers className="big-x"/>
-                   <span className="left-space">
-                    Followers
-                   </span>
+                    <div onClick={() => navigate("/followers")} className={"btn navbtn noactive flex center medel" + (isActive("/followers") ? " active" : "noactive")}>
+                        <FiUsers className="big-x" />
+                        <span className="left-space">
+                            Followers
+                        </span>
                     </div>
                 </div>
             </div>

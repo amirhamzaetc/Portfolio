@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import GitHubStars from '../data/GitHubStars';
 import Contacts from '../components/Contacts';
+import dateFormat, { masks } from "dateformat";
 
 
 // icons
@@ -15,6 +16,7 @@ import { VscGithub } from "react-icons/vsc";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { BsBuildings } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
+import { MdDateRange } from "react-icons/md";
 
 function Home() {
 
@@ -33,7 +35,7 @@ function Home() {
   return (
     <div>
       {
-        userData?.message ?
+        userData?.messagei ?
           <Error />
           :
           <div className="flex">
@@ -97,6 +99,13 @@ function Home() {
                     &nbsp;
                     <span className="mark">
                       <GitHubStars username={userData?.login} />
+                    </span>
+                  </p>
+                  <p className="flex medel">
+                    <MdDateRange className="big-xxl"/>
+                    Joined
+                    <span className="mark">
+                      {dateFormat(userData?.created_at , "d mmm yyyy")}
                     </span>
                   </p>
                   <div className="flex center medel">

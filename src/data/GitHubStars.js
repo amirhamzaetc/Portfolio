@@ -63,7 +63,7 @@ function GitHubStars({ username }) {
     }
 
     if (error) {
-        return <p style={{ color: 'red' }}>Error: {error}</p>;
+        return <span style={{ color: 'red' }}>Error: {error}</span>;
     }
     return formatNumber(totalStars || 0);
 }

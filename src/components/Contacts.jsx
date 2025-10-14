@@ -7,6 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaSnapchat } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 function Contacts() {
@@ -27,6 +28,9 @@ function Contacts() {
                 </button>
                 <button className="btn navbtn noactive flex medel center snapchat">
                     <FaSnapchat className="socalIcon"/>
+                </button>
+                <button className="btn navbtn noactive medel center flex x">
+                    <FaXTwitter className="socalIcon"/>
                 </button>
             </div>
         </>
