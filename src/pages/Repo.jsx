@@ -1,59 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import githubApi from "../data/GithubApi";
 
 // icons
 import { GiScales } from "react-icons/gi";
-import { TbHistoryToggle } from "react-icons/tb";
+import { TbHistoryToggle, TbWorldWww } from "react-icons/tb";
 import { FaRegStar } from "react-icons/fa";
 import { MdDataUsage } from "react-icons/md";
 import { PiGithubLogoLight } from "react-icons/pi";
-import { TbWorldWww } from "react-icons/tb";
 
 function Repo() {
-    return (
-        <>
-            <div className="infoGlass fillSet">
-                <div className="wHaf">
-                    <div className="flex medel">
-                        <span className="subTitle">
-                            This-is-repo-name
-                        </span>
-                        <span className="mark">
-                            Pubilc
-                        </span>
-                    </div>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi assumenda asperiores laudantium dolores mollitia soluta repudiandae repellat? Aut, iste molestias.
-                        </p>
-                        <div className="flex wrap">
-                            <span className="mark">
-                                <MdDataUsage /> 270 MB
-                            </span>
-                            <span className="mark">
-                                <FaRegStar /> 120k
-                            </span>
-                            <span className="mark">
-                                <GiScales /> MIT License
-                            </span>
-                            <span className="mark">
-                                <TbHistoryToggle />  10/10/25 10:20 AM
-                            </span>
+  const [userData, setUserData] = useState(null);
+  const [userRepo, setUserRepo] = useState([]);
 
-                            <span className="mark">
-                              <TbWorldWww />  Live
-                            </span>
+  useEffect(() => {
+    async function repoData() {
+      try {
+        const data = await githubApi();
+        setUserData(data);
 
-                            <span className="mark">
-                               <PiGithubLogoLight /> GitHub  
-                            </span>
+        if (data?.repos_url) {
+          const repos = await fetch(data.repos_url);
+          const userTheRepo = await repos.json();
+          setUserRepo(userTheRepo);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
 
-                        </div>
-                    </div>
+    repoData();
+  }, []); // শুধুমাত্র একবার চালাবে
+
+  return (
+    <div>
+      {userRepo.map((f) => (
+        <div key={f.id}>
+          <div className="infoGlass fillSet">
+            <div className="wHaf">
+              <div className="flex medel wrap">
+                <span className="subTitle">{f.name}</span>
+                <span className="mark">Public</span>
+              </div>
+              <div>
+                <p>{f.description || "No description provided."}</p>
+                <div className="flex wrap">
+                  <span className="mark">
+                    <MdDataUsage /> {Math.floor(Math.random() * 500)} MB
+                  </span>
+                  <span className="mark">
+                    <FaRegStar /> {f.stargazers_count}
+                  </span>
+                  <span className="mark">
+                    <GiScales /> {f.license?.name || "No License"}
+                  </span>
+                  <span className="mark">
+                    <TbHistoryToggle />{" "}
+                    {new Date(f.updated_at).toLocaleString()}
+                  </span>
+
+                  {f.homepage && (
+                    <a href={f.homepage} target="_blank" rel="noreferrer" className="mark">
+                      <TbWorldWww /> Live
+                    </a>
+                  )}
+
+                  <a href={f.html_url} target="_blank" rel="noreferrer" className="mark">
+                    <PiGithubLogoLight /> GitHub
+                  </a>
                 </div>
+              </div>
             </div>
-        </>
-    )
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
-
 
 export default Repo;
