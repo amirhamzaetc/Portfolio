@@ -35,7 +35,7 @@ function Home() {
   return (
     <div>
       {
-        userData?.messagei ?
+        userData?.message ?
           <Error />
           :
           <div className="flex">
@@ -56,12 +56,12 @@ function Home() {
                     {userData?.bio}
                   </p>
                   <p className="flex bedel">
-                   <VscGithub className="big-xxl"/>
+                    <VscGithub className="big-xxl" />
                     <a href={userData?.html_url}>{userData?.login}</a>
                   </p>
                   <p className="flex medel big-x">
                     <span>
-                      <LuUsersRound className="big-xxl"/>
+                      <LuUsersRound className="big-xxl" />
                     </span>
                     <span>
                       <span className="point">{formatNumber(userData?.followers || 0)}</span> Followers
@@ -69,30 +69,35 @@ function Home() {
                       <span className="point">{formatNumber(userData?.following || 0)}</span> Following
                     </span>
                   </p>
-                  <p className="flex medel">
-                    {
-                      userData?.location ? (
+
+                  {
+                    userData?.location ? (
+                      <p className="flex medel">
                         <span className="flex medel">
-                          <IoLocationOutline className="big-xxl"/> {" "}
+                          <IoLocationOutline className="big-xxl" /> {" "}
                           {userData?.location}
                         </span>
-                      ) : (
-                        ""
-                      )
-                    }
-                  </p>
+                      </p>
+                    ) : (
+                      ""
+                    )
+                  }
+
                   <p className="flex medel">
-                   <RiGitRepositoryLine className="big-xxl"/>
+                    <RiGitRepositoryLine className="big-xxl" />
                     Repositories &nbsp; <span className="mark">{userData?.public_repos}</span>
                   </p>
-                  <p className="flex medel">
-                    <span>
-                      <BsBuildings className="big-xxl"/>
-                    </span>
-                    <span>
-                      {userData?.company}
-                    </span>
-                  </p>
+                  {
+                    userData?.company ? (
+                      <p className="flex medel">
+                        <span>
+                          <BsBuildings className="big-xxl" />
+                        </span>
+                        <span>
+                          {userData?.company}
+                        </span>
+                      </p>
+                    ) : ("")}
                   <p className="flex medel">
                     <FaRegStar className="big-xxl" />
                     Stars
@@ -102,10 +107,10 @@ function Home() {
                     </span>
                   </p>
                   <p className="flex medel">
-                    <MdDateRange className="big-xxl"/>
+                    <MdDateRange className="big-xxl" />
                     Joined
                     <span className="mark">
-                      {dateFormat(userData?.created_at , "d mmm yyyy")}
+                      {dateFormat(userData?.created_at, "d mmm yyyy")}
                     </span>
                   </p>
                   <div className="flex center medel">
